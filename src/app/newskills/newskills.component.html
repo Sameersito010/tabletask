@@ -1,0 +1,30 @@
+<p>newskills works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered bg-white text-dark">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th><select name="all" id="all">
+                            <option value="complete">complete</option>
+                            <option value="complete">incomplete</option>
+                            <option value="complete">all</option>
+                        </select></th>
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of todos">
+                        <td>{{post.id}}</td>
+                        <td>{{post.title}}</td>
+                        <td [ngClass]="{'text-success':post.completed, 'text-danger':!post.completed}">{{post.completed?"complete":"incomplete"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
